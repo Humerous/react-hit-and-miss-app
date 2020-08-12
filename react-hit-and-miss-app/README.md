@@ -32,12 +32,14 @@ This is a quick and easy website build with HTML-CSS-JS-BOOTSRAP4 , its my very 
 ## How To Use
 
 01.\_This is a Prediction Estimation Game with the following rules:
-02.\_You can have unlimited goes, so make evry chance count because
-you are against yourself.
+
+02.\_You can have unlimited goes, so make evry chance count because you are against yourself.
+
 03.\_You have to guess a random number between 1 to 100.
-04.\_The game will access how close you are to your predetermined
-number and judged on how close or far your guess is with a
-tempreture gauge reading on the form of the following keywords. IE: ("cold", "warm", "hot", "extremely hot").
+
+04.\_The game will access how close you are to your predetermined number and judged on how close or far your guess is with a 
+      tempreture gauge reading on the form of the following keywords. 
+      IE: ("cold", "warm", "hot", "extremely hot").
 
 05.\_The goal of the game is to predict the correct number is as few
 chance as possible
