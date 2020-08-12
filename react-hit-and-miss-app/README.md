@@ -1,4 +1,4 @@
-# react-hit-miss-app
+# react-hit-and-miss-app
 
 HTML-CSS-REACTJS-MATERIAL-UI
 
