@@ -1,6 +1,6 @@
 # react-hit-and-miss-app
 
-HTML-CSS-REACTJS-MATERIAL-UI
+REACTJS-MATERIAL-UI
 
 ---
 
