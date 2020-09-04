@@ -22,8 +22,8 @@ This is a quick and easy website build with HTML-CSS-JS-BOOTSRAP4 , its my very 
 
 #### Technologies
 
-- Technology 1
-- Technology 2
+- REACTJS
+- MATERIAL-UI
 
 [Back To The Top](#read-me-template)
 
