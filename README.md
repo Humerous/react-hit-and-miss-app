@@ -1,39 +1,59 @@
 # Hit or Miss
 
-A tactile number-guessing game rebuilt as a polished React portfolio project. The player hunts for a hidden number from 1 to 100 using progressively warmer proximity feedback, a mechanical keypad, an analogue-style gauge, a colour-coded attempt log, and a dedicated win state.
+A number-guessing game rebuilt from an early React learning project into a complete, tested and deployable web application.
 
-This repository preserves the history of the original project while modernising the interface, application structure, accessibility, testing, and developer workflow.
+The original game mechanic has been preserved. The interface, feedback system, responsive behaviour, accessibility, testing and development setup have been modernised.
 
-## Live Demo
+**Status:** Complete  
+**Project type:** Legacy modernisation  
+**Stack:** React, Vite, Vitest, Testing Library, CSS  
+**Live:** [Play Hit or Miss](https://react-hit-and-miss-app.vercel.app)
 
-[Play Hit or Miss](https://react-hit-and-miss-app.vercel.app)
+## Overview
 
-## Highlights
+The player has to find a hidden number between 1 and 100.
 
-- Responsive Bakelite-and-brass interface with a custom instrument-panel aesthetic
-- Clear proximity system: Cold, Warm, Hot, Extreme, and Hit
-- Mechanical keypad plus direct keyboard input
-- High/low directional feedback after each unsuccessful guess
-- Colour-coded attempt history with newest guesses first
-- Dedicated win celebration and New Game modal
-- Custom favicon and responsive mobile layout
-- Semantic HTML, keyboard-friendly controls, live status announcements, and reduced-motion support
-- Unit/component tests with Vitest and Testing Library
-- GitHub Actions CI for test and production-build verification
+Each unsuccessful guess returns two forms of feedback:
+
+- temperature: Cold, Warm, Hot or Extreme;
+- direction: Too High or Too Low.
+
+The interface uses an analogue-style proximity gauge, mechanical keypad and colour-coded attempt history to make that feedback easy to read.
 
 ## Modernisation
 
-The original version began as an early React learning project. The current version is a ground-up presentation and UX refinement that keeps the simple game concept while demonstrating stronger product thinking and front-end execution.
+The original version was an early React learning project. The aim was not to change the basic idea, but to take the project through a proper modernisation and release process.
 
-The modernisation focused on:
+### Preserved
 
-- preserving the core game mechanic;
-- replacing the original presentation with a coherent visual system;
-- improving readability and feedback hierarchy;
-- adding responsive behaviour and accessibility considerations;
-- separating reusable game utilities and interface components;
-- adding automated tests and CI checks;
-- producing a clean repository suitable for portfolio review.
+- Original game concept
+- Core 1 to 100 guessing mechanic
+- Existing repository history
+
+### Rebuilt
+
+- React and Vite development setup
+- Responsive Bakelite-and-brass interface
+- Clear proximity gauge and temperature states
+- High and low directional feedback
+- Vertical colour-coded attempt history
+- Win state and New Game flow
+- Keyboard-friendly controls
+- Semantic HTML and accessibility improvements
+- Reduced-motion support
+- Automated tests
+- GitHub Actions CI
+- Production deployment on Vercel
+
+## Engineering decisions
+
+The game mechanic is deliberately simple. Most of the work is in the presentation, interaction states and completion quality.
+
+The temperature system uses named states rather than a percentage because the game is communicating proximity, not probability.
+
+Previous guesses are kept in a vertical history so the player can compare attempts without covering the gauge or compressing the guess values.
+
+The gauge and guess controls have separate layout areas so the main feedback instrument remains visible at all supported screen sizes.
 
 ## Technology
 
@@ -41,22 +61,18 @@ The modernisation focused on:
 - Vite 8
 - Vitest 4
 - Testing Library
-- Modern CSS
+- CSS
 - GitHub Actions
-
-## Requirements
-
-- Node.js 22.12 or newer
-- npm
+- Vercel
 
 ## Run locally
+
+Requires Node.js 22.12 or newer and npm.
 
 ```bash
 npm install
 npm run dev
 ```
-
-Vite will print the local development URL, normally `http://localhost:5173`.
 
 ## Quality checks
 
@@ -65,31 +81,19 @@ npm test
 npm run build
 ```
 
+The GitHub Actions workflow runs the test suite and production build on changes to `master`.
+
 ## How to play
 
 1. Enter a whole number from 1 to 100.
-2. Read the temperature and high/low feedback.
-3. Use the proximity gauge and attempt history to narrow the range.
+2. Read the temperature and high or low feedback.
+3. Use the gauge and previous entries to narrow the range.
 4. Find the hidden number in as few attempts as possible.
-5. Start a new game after the win state appears.
+5. Start a new game when the target is found.
 
-## Project structure
+## Scope
 
-```text
-src/
-├── components/
-│   ├── Form/
-│   ├── Info/
-│   └── Progress/
-├── util/
-├── App.jsx
-├── App.css
-└── index.jsx
-```
-
-## Portfolio note
-
-This project is intentionally small in scope. The value is in the transformation of a basic learning exercise into a focused, finished product with a distinct interface, clear interaction states, testing, accessibility considerations, and a maintainable modern React setup.
+This is intentionally a small front-end project. Its purpose in the portfolio is to show the restoration and modernisation of an older project through design, implementation, testing, repository cleanup and production deployment.
 
 ## License
 
