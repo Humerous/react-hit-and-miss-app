@@ -1,92 +1,92 @@
-# react-hit-and-miss-app
+# Hit or Miss
 
-REACTJS-MATERIAL-UI
+A tactile number-guessing game rebuilt as a polished React portfolio project. The player hunts for a hidden number from 1 to 100 using progressively warmer proximity feedback, a mechanical keypad, an analogue-style gauge, a colour-coded attempt log, and a dedicated win state.
 
----
+This repository preserves the history of the original project while modernising the interface, application structure, accessibility, testing, and developer workflow.
 
-### Table of Contents
+## Highlights
 
-You're sections headers will be used to reference location of destination.
+- Responsive Bakelite-and-brass interface with a custom instrument-panel aesthetic
+- Clear proximity system: Cold, Warm, Hot, Extreme, and Hit
+- Mechanical keypad plus direct keyboard input
+- High/low directional feedback after each unsuccessful guess
+- Colour-coded attempt history with newest guesses first
+- Dedicated win celebration and New Game modal
+- Custom favicon and responsive mobile layout
+- Semantic HTML, keyboard-friendly controls, live status announcements, and reduced-motion support
+- Unit/component tests with Vitest and Testing Library
+- GitHub Actions CI for test and production-build verification
 
-- [Description](#description)
-- [How To Use](#how-to-use)
-- [References](#references)
-- [License](#license)
-- [Author Info](#author-info)
+## Modernisation
 
----
+The original version began as an early React learning project. The current version is a ground-up presentation and UX refinement that keeps the simple game concept while demonstrating stronger product thinking and front-end execution.
 
-## Description
+The modernisation focused on:
 
-This is a quick and easy website build with HTML-CSS-JS-BOOTSRAP4 , its my very first every puplished site. Hope you like it.
+- preserving the core game mechanic;
+- replacing the original presentation with a coherent visual system;
+- improving readability and feedback hierarchy;
+- adding responsive behaviour and accessibility considerations;
+- separating reusable game utilities and interface components;
+- adding automated tests and CI checks;
+- producing a clean repository suitable for portfolio review.
 
-#### Technologies
+## Technology
 
-- REACTJS
-- MATERIAL-UI
+- React 19
+- Vite 8
+- Vitest 4
+- Testing Library
+- Modern CSS
+- GitHub Actions
 
-[Back To The Top](#read-me-template)
+## Requirements
 
----
+- Node.js 22.12 or newer
+- npm
 
-## How To Use
+## Run locally
 
-01.\_This is a Prediction Estimation Game with the following rules:
+```bash
+npm install
+npm run dev
+```
 
-02.\_You can have unlimited goes, so make evry chance count because you are against yourself.
+Vite will print the local development URL, normally `http://localhost:5173`.
 
-03.\_You have to guess a random number between 1 to 100.
+## Quality checks
 
-04.\_The game will access how close you are to your predetermined number and judged on how close or far your guess is with a 
-      tempreture gauge reading on the form of the following keywords. 
-      IE: ("cold", "warm", "hot", "extremely hot").
+```bash
+npm test
+npm run build
+```
 
-05.\_The goal of the game is to predict the correct number is as few
-chance as possible
+## How to play
 
-Hope you enjoy!
+1. Enter a whole number from 1 to 100.
+2. Read the temperature and high/low feedback.
+3. Use the proximity gauge and attempt history to narrow the range.
+4. Find the hidden number in as few attempts as possible.
+5. Start a new game after the win state appears.
 
-#### Installation
+## Project structure
 
-01.\_Download the zip repository .
-02.\_Unzip
-03.\_CD REACT-HIT-MISS-APP
-03.\_NPM INSTALL
-04.\_NPM START
-05.\_ENJOY!
+```text
+src/
+├── components/
+│   ├── Form/
+│   ├── Info/
+│   └── Progress/
+├── util/
+├── App.jsx
+├── App.css
+└── index.jsx
+```
 
----
+## Portfolio note
 
-## References
-
-Hyperion Development Bootcamp
-
-[Back To The Top](#read-me-template)
-
----
+This project is intentionally small in scope. The value is in the transformation of a basic learning exercise into a focused, finished product with a distinct interface, clear interaction states, testing, accessibility considerations, and a maintainable modern React setup.
 
 ## License
 
-MIT License
-
-Copyright (c) [2022][david k miller]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-[Back To The Top](#read-me-template)
+MIT. See [LICENSE](LICENSE).

@@ -1,0 +1,339 @@
+.is-winner .apparatus {
+  animation: victoryMachine 1.2s cubic-bezier(.2,.8,.25,1) 1;
+}
+
+.is-winner .apparatus::before {
+  border-color: rgba(56, 201, 107, .48);
+  box-shadow: inset 0 0 42px rgba(56, 201, 107, .08);
+}
+
+.is-winner .signal-display {
+  animation: victoryDisplay .72s ease-in-out 3;
+}
+
+.is-winner .round-status i {
+  animation: victoryLamp .42s ease-in-out 8 alternate;
+}
+
+.victory-plaque {
+  position: absolute;
+  z-index: 6;
+  top: 15px;
+  left: 50%;
+  display: flex;
+  min-width: 154px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 7px 14px 6px;
+  border: 1px solid #4ebf70;
+  border-radius: 4px;
+  color: #a8e8b8;
+  background: linear-gradient(#173622, #0d2115);
+  box-shadow: 0 0 0 3px #180e09, 0 0 22px rgba(56,201,107,.24), inset 0 0 15px rgba(56,201,107,.1);
+  font-size: .61rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+  animation: victoryPlaque .55s cubic-bezier(.17,.89,.32,1.35) both;
+}
+
+.victory-plaque strong {
+  color: #e7ffd9;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.win-celebration {
+  position: fixed;
+  z-index: 30;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.win-celebration i {
+  --piece-color: var(--brass-light);
+  position: absolute;
+  top: -18px;
+  left: var(--piece-left);
+  width: 6px;
+  height: 13px;
+  border-radius: 1px;
+  background: var(--piece-color);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--piece-color) 42%, transparent);
+  opacity: 0;
+  transform: translate3d(0, -20px, 0) rotate(0deg);
+  animation: confettiFall var(--piece-duration) cubic-bezier(.16,.75,.26,.98) var(--piece-delay) 1 both;
+}
+
+.win-celebration i:nth-of-type(5n + 1) { --piece-color: var(--hit); width: 7px; height: 7px; border-radius: 50%; }
+.win-celebration i:nth-of-type(5n + 2) { --piece-color: var(--brass-light); }
+.win-celebration i:nth-of-type(5n + 3) { --piece-color: var(--warm); }
+.win-celebration i:nth-of-type(5n + 4) { --piece-color: #f5dfb0; }
+.win-celebration i:nth-of-type(5n) { --piece-color: var(--cold); width: 5px; height: 10px; }
+
+.victory-flash {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 67% 43%, rgba(82,255,131,.18), transparent 8%, rgba(230,183,87,.08) 22%, transparent 48%);
+  opacity: 0;
+  animation: victoryFlash .8s ease-out 1;
+}
+
+@keyframes confettiFall {
+  0% { opacity: 0; transform: translate3d(0, -30px, 0) rotate(0deg); }
+  8% { opacity: 1; }
+  100% { opacity: 0; transform: translate3d(var(--piece-drift), 102vh, 0) rotate(var(--piece-rotate)); }
+}
+
+@keyframes victoryFlash {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes victoryMachine {
+  0%, 100% { transform: translateY(0) scale(1); }
+  24% { transform: translateY(-4px) scale(1.008); }
+  44% { transform: translateY(2px) scale(.997); }
+  64% { transform: translateY(-2px) scale(1.003); }
+}
+
+@keyframes victoryDisplay {
+  0%, 100% { box-shadow: inset 0 0 18px rgba(0,0,0,.8), inset 0 0 26px var(--signal-glow), 0 0 0 4px #2a170e, 0 0 0 5px #684126; }
+  50% { box-shadow: inset 0 0 18px rgba(0,0,0,.65), inset 0 0 42px rgba(56,201,107,.28), 0 0 0 4px #2a170e, 0 0 0 5px #4a925f, 0 0 28px rgba(56,201,107,.3); }
+}
+
+@keyframes victoryLamp {
+  from { transform: scale(1); box-shadow: 0 0 12px var(--signal-glow); }
+  to { transform: scale(1.65); box-shadow: 0 0 22px rgba(56,201,107,.76); }
+}
+
+@keyframes victoryPlaque {
+  from { opacity: 0; transform: translateX(-50%) translateY(-10px) scale(.86); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+@media (max-width: 650px) {
+  .gauge { width: min(286px, 100%); }
+  .victory-plaque { top: 13px; min-width: 136px; padding-inline: 10px; }
+}
+
+/* Winning modal */
+.win-dialog {
+  width: min(calc(100vw - 32px), 440px);
+  max-width: calc(100vw - 32px);
+  border: 1px solid #5ba774;
+  border-radius: 16px;
+  color: var(--cream);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(56, 201, 107, .13), transparent 36%),
+    linear-gradient(155deg, #302016 0%, #160e09 58%, #0b100b 100%);
+  box-shadow:
+    0 34px 110px rgba(0,0,0,.82),
+    0 0 0 5px #110b07,
+    0 0 42px rgba(56,201,107,.18),
+    inset 0 0 0 1px rgba(225,181,87,.15);
+  animation: winDialogIn .48s cubic-bezier(.17,.89,.32,1.3) both;
+}
+
+.win-dialog::backdrop {
+  background: rgba(5,3,2,.64);
+  backdrop-filter: blur(3px);
+  animation: winBackdropIn .35s ease-out both;
+}
+
+.win-dialog-content {
+  display: grid;
+  justify-items: center;
+  padding: 34px 34px 32px;
+  text-align: center;
+}
+
+.win-badge {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  place-items: center;
+  border: 1px solid #d39b48;
+  border-radius: 50%;
+  color: #efd18f;
+  background: radial-gradient(circle at 36% 30%, #5a3a21, #1b100a 68%);
+  box-shadow: 0 0 0 4px #130b07, 0 0 24px rgba(56,201,107,.15), inset 0 0 14px rgba(224,174,83,.15);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.12rem;
+  letter-spacing: .06em;
+}
+
+.win-dialog .section-kicker {
+  color: #71d28e;
+}
+
+.win-dialog h2 {
+  margin: 7px 0 4px;
+  color: #f4e1b8;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem, 8vw, 4rem);
+  font-weight: 400;
+  letter-spacing: .025em;
+  line-height: .95;
+  text-transform: uppercase;
+}
+
+.win-number {
+  display: grid;
+  width: 116px;
+  height: 82px;
+  margin: 18px 0 12px;
+  place-items: center;
+  border: 1px solid #57c37a;
+  border-radius: 8px;
+  color: #caffd9;
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.025) 0 1px, transparent 1px 4px),
+    #0c1d12;
+  box-shadow: 0 0 0 4px #18100a, inset 0 0 28px rgba(56,201,107,.16), 0 0 26px rgba(56,201,107,.16);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  line-height: 1;
+  text-shadow: 0 0 18px rgba(56,201,107,.42);
+  animation: winNumberGlow 1.15s ease-in-out 2;
+}
+
+.win-dialog p:not(.section-kicker) {
+  margin: 0 0 24px;
+  color: #a99574;
+  font-size: .88rem;
+  letter-spacing: .03em;
+}
+
+.win-dialog p strong {
+  color: #f0ca79;
+}
+
+.win-new-game {
+  width: min(100%, 260px);
+  min-height: 54px;
+  border-color: #62c980;
+  color: #07150b;
+  background: linear-gradient(#7ee09a, #3fae62);
+  box-shadow: inset 0 1px 0 #c6ffd6, 0 4px 0 #1f6737, 0 8px 18px rgba(0,0,0,.34), 0 0 20px rgba(56,201,107,.12);
+}
+
+.win-new-game:hover {
+  filter: brightness(1.08);
+}
+
+.win-new-game:focus-visible {
+  outline: 3px solid #f1c05e;
+  outline-offset: 4px;
+}
+
+@keyframes winDialogIn {
+  from { opacity: 0; transform: translateY(18px) scale(.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes winBackdropIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes winNumberGlow {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 4px #18100a, inset 0 0 28px rgba(56,201,107,.16), 0 0 26px rgba(56,201,107,.16); }
+  50% { transform: scale(1.035); box-shadow: 0 0 0 4px #18100a, inset 0 0 40px rgba(56,201,107,.26), 0 0 42px rgba(56,201,107,.26); }
+}
+
+@media (max-width: 650px) {
+  .win-dialog-content { padding: 30px 24px 26px; }
+  .win-number { width: 104px; height: 76px; font-size: 3.6rem; }
+}
+
+@media (max-width: 520px) {
+  .temperature-key { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .guess-history .guess-entry { grid-template-columns: 31px minmax(50px, .65fr) minmax(76px, 1fr); }
+  .guess-number { font-size: 1.65rem; }
+}
+
+
+/* Gauge clearance pass: the gauge owns its column and never shares its footprint with the guess controls. */
+.instrument-panel {
+  position: relative;
+  isolation: isolate;
+}
+
+.gauge-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.gauge {
+  max-width: 100%;
+}
+
+.signal-display {
+  position: relative;
+  z-index: 1;
+}
+
+.control-panel {
+  position: relative;
+  z-index: 1;
+  clear: both;
+  padding-top: 32px;
+}
+
+.guess-form {
+  min-width: 0;
+}
+
+@media (max-width: 1100px) {
+  .stage {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .title-block {
+    padding-top: 12px;
+    text-align: center;
+  }
+
+  .title-block h1 {
+    font-size: clamp(4.7rem, 13vw, 7.5rem);
+  }
+
+  .title-block > p:last-child {
+    margin-inline: auto;
+  }
+
+  .apparatus {
+    width: min(100%, 760px);
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .instrument-panel {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-inline: 27px;
+  }
+
+  .gauge-wrap {
+    padding-block: 9px 14px;
+  }
+
+  .gauge {
+    width: min(286px, 100%);
+  }
+
+  .signal-display {
+    width: 100%;
+  }
+}
