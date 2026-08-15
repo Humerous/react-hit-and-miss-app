@@ -4,6 +4,10 @@ A tactile number-guessing game rebuilt as a polished React portfolio project. Th
 
 This repository preserves the history of the original project while modernising the interface, application structure, accessibility, testing, and developer workflow.
 
+## Live Demo
+
+[Play Hit or Miss](https://react-hit-and-miss-app.vercel.app)
+
 ## Highlights
 
 - Responsive Bakelite-and-brass interface with a custom instrument-panel aesthetic
