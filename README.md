@@ -1,15 +1,16 @@
 # Hit or Miss
 
+**A small React game rebuilt to demonstrate interaction design, accessibility, automated testing and release discipline.**
+
 [![Hit or Miss showcase](docs/assets/hit-and-miss-showcase.webp)](https://react-hit-and-miss-app.vercel.app/)
 
-A number-guessing game rebuilt from an early React learning project into a complete, tested and deployable web application.
+A number-guessing game modernised from an early React learning project into a complete, tested and deployable web application.
+
+**Live:** [react-hit-and-miss-app.vercel.app](https://react-hit-and-miss-app.vercel.app)  
+**Stack:** React · Vite · Vitest · Testing Library · CSS · GitHub Actions  
+**Status:** Complete / Live
 
 The original game mechanic has been preserved. The interface, feedback system, responsive behaviour, accessibility, testing and development setup have been modernised.
-
-**Status:** Complete  
-**Project type:** Legacy modernisation  
-**Stack:** React, Vite, Vitest, Testing Library, CSS  
-**Live:** [Play Hit or Miss](https://react-hit-and-miss-app.vercel.app)
 
 ## Overview
 
