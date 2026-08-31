@@ -1,5 +1,7 @@
 # Hit or Miss
 
+[![Hit or Miss showcase](docs/assets/hit-and-miss-showcase.webp)](https://react-hit-and-miss-app.vercel.app/)
+
 A number-guessing game rebuilt from an early React learning project into a complete, tested and deployable web application.
 
 The original game mechanic has been preserved. The interface, feedback system, responsive behaviour, accessibility, testing and development setup have been modernised.
