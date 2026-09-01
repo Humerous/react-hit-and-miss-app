@@ -1,5 +1,5 @@
 {
-  "name": "react-hit-and-miss-app",
+  "name": "hit-or-miss",
   "version": "2.0.0",
   "private": true,
   "type": "module",
@@ -28,7 +28,7 @@
   "description": "A polished React number-guessing game with proximity feedback, responsive UI, and accessible interaction states.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Humerous/react-hit-and-miss-app.git"
+    "url": "git+https://github.com/Humerous/hit-or-miss.git"
   },
   "keywords": [
     "react",
