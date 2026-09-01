@@ -84,7 +84,7 @@ npm test
 npm run build
 ```
 
-The GitHub Actions workflow runs the test suite and production build on changes to `master`.
+The GitHub Actions workflow runs the test suite and production build for pushes and pull requests.
 
 ## How to play
 
